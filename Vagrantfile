@@ -25,7 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			
 		git clone https://github.com/mxe/mxe.git
 		cd mxe
+		git checkout bec5b6c734756f981e98666ec52343277f4fbd2e
 		echo "MXE_TARGETS := i686-w64-mingw32.static x86_64-w64-mingw32.static" >> settings.mk
+		make gcc
 		chown -R vagrant:vagrant .
 	SHELL
 
